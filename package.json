@@ -1,0 +1,11 @@
+{
+  "name": "scheduler",
+  "version": "0.0.1",
+  "description": "Simple task management",
+  "main": "app.js",
+  "author": "ATMartin",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.4.2"
+  }
+}

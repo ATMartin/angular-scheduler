@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello World!</title>
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="tokens.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+    <div class="container" ng-app="npaScheduler">
+      <div ng-controller="timeOffController">
+        <input type="text" ng-model="event.description" />
+        <br>
+        <input type="date" date-parse ng-model="event.start" />
+        <br>
+        <input type="date" date-parse ng-model="event.end" />
+        <br>
+        <button ng-click="scheduleTimeOff()">Do it!</button>
+        <br>
+        <p>
+          Start: {{event.start.iso}} | End: {{event.end.iso}}
+          Description: {{event.description}}
+        </p>
+        <p>Status: {{message}}</p>
+      </div>
+    </div>
+
+  </body>
+</html>
