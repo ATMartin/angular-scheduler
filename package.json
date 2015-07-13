@@ -6,6 +6,7 @@
   "author": "ATMartin",
   "license": "MIT",
   "dependencies": {
-    "angular": "^1.4.2"
+    "angular": "^1.4.2",
+    "angular-router": "0.0.2"
   }
 }

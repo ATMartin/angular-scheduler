@@ -1,0 +1,39 @@
+<div ng-if="!loggedIn()">
+  <h3>Sorry, you need to be <a href="#/user/login">logged in</a> to see this.</h3>
+</div>
+<div ng-if="loggedIn()">
+  <h3>Your Profile</h3>
+  <p>{{getUser().employee.fname}} {{getUser().employee.lname}}</p>
+  <p><em>({{getUser().employee.initials}})</em></p>
+  <p>Roles:</p>
+  <ul>
+    <li ng-if="getUser().employee.doctor">Doctor</li>
+    <li ng-if="getUser().employee.cutter">Cutter</li>
+    <li ng-if="getUser().employee.typist">Typist</li>
+  </ul>
+
+  <h3>Total Days Taken This Year: <strong>0</strong></h3>
+
+  <h3>Your current requests:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Start:</th>
+        <th>End</th>
+        <th>Reason</th>
+        <th>Approved?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="request in getUser().requests">
+        <td>{{request.start}}</td>
+        <td>{{request.end}}</td>
+        <td>{{request.description}}</td>
+        <td>{{request.approved ? "Y" : "N"}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  <button ng-click="getUser()">Get Current User</button>
+  <a href="#/">-- Home --</a>
+</div>

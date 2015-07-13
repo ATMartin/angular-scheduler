@@ -1,0 +1,73 @@
+<h3>Open Requests:</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Reason</th>
+      <th>Start:</th>
+      <th>End:</th>
+      <th>Approve?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="request in openRequests">
+      <td>{{request.employee.initials}}</th>
+      <td>{{request.description}}</td>
+      <td>{{request.start.iso.split('T')[0]}}</td>
+      <td>{{request.end.iso.split('T')[0]}}</td>
+      <td>
+        <a ng-click="approveRequest(request)">Y</a> ||
+        <a ng-click="denyRequest(request)">N</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<h3>Current Users: </h3>
+<table>
+  <thead>
+    <th>First</th>
+    <th>Last</th>
+    <th>Initials</th>
+    <th>Doc?</th>
+    <th>Cut?</th>
+    <th>Type?</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users">
+      <td>{{user.fname}}</td>
+      <td>{{user.lname}}</td>
+      <td>{{user.initials}}</td>
+      <td>{{user.doctor ? 'Y' : 'N'}}</td>
+      <td>{{user.cutter ? 'Y' : 'N'}}</td>
+      <td>{{user.typist ? 'Y' : 'N'}}</td>
+      <td>
+        <a ng-click="editUser(user)">E</a> ||
+        <a ng-click="deleteUser(user)">X</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>New User</h3>
+<form name="new-user" ng-submit="updateUser(newuser)">
+  <input type="text" ng-model="newuser.fname" placeholder="First Name" />
+  <br>
+  <input type="text" ng-model="newuser.lname" placeholder="Last Name" />
+  <br>
+  <input type="text" ng-model="newuser.initials" placeholder="Initials" />
+  <br>
+  <label for="doctor">Doctor?</label>
+  <input type="checkbox" ng-model="newuser.doctor" />
+  <br>
+  <label for="cutter">Cutter?</label>
+  <input type="checkbox" ng-model="newuser.cutter" />
+  <br>
+  <label for="typist">Typist?</label>
+  <input type="checkbox" ng-model="newuser.typist" />
+  <br>
+  <input type="submit" value="Update" />
+</form>
+
+<br>
+<a href="#/">-- Home --</a>

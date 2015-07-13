@@ -1,0 +1,25 @@
+<h3>New User</h3>
+<input type="text" ng-model="newemployee.fname" placeholder="First
+Name" />
+<br>
+<input type="text" ng-model="newemployee.lname" placeholder="Last Name"
+/>
+<br>
+<input type="text" ng-model="newemployee.initials"
+placeholder="Initials" />
+<br>
+<label for ="doctor">Doctor:</label>
+<input type="checkbox" ng-model="newemployee.doctor" />
+<br>
+<label for="cutter">Cutter:</label>
+<input type="checkbox" ng-model="newemployee.cutter" />
+<br>
+<label for="typist">Typist:</label>
+<input type="checkbox" ng-model="newemployee.typist" />
+<br>
+<input type="text" ng-model="newuser.email" placeholder="Email" />
+<br>
+<input type="password" ng-model="newuser.password" placeholder="Password"
+/>
+<br>
+<button ng-click="makeNewUser()">Create</button>

@@ -1,0 +1,20 @@
+<label for="employee">Employee:</label>
+<select ng-model="event.employee">
+  <option ng-repeat="user in users"
+  value="{{user.objectId}}">{{user.initials}}</option>
+</select>
+<br>
+<input type="text" ng-model="event.description"
+placeholder="Reason" />
+<br>
+<label for="start">Start:</label>
+<input type="date" date-parse ng-model="event.start" />
+<br>
+<label for="end">End:</label>
+<input type="date" date-parse ng-model="event.end" />
+<br>
+<button ng-click="scheduleTimeOff()">Do it!</button>
+<br>
+<p>Status: {{message}}</p>
+<br>
+<a href="#/admin">--Admin--</a>
